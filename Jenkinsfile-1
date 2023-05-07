@@ -1,0 +1,15 @@
+pipeline {
+    agent {
+        docker {
+            image 'hashicorp/terraform:1.0.3'
+        }
+    }
+    stages {
+      stages('Test') {
+        steps {
+          sh 'node --version'
+          }
+        }
+      }
+    }
+
