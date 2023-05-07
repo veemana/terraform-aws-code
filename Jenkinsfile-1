@@ -21,8 +21,8 @@ pipeline {
 
     stage('Terraform Init') {
       steps {
-        sh 'sed -i "s/AWS_ACCESS_KEY_ID/${AWS_ACCESS_KEY_ID}/g" main.tf'
-        sh 'sed -i "s/AWS_SECRET_ACCESS_KEY/${AWS_SECRET_ACCESS_KEY}/g" main.tf'
+        sh 'sed -i -e "s/AWS_ACCESS_KEY_ID/${AWS_ACCESS_KEY_ID}/g" main.tf'
+        sh 'sed -i -e "s/AWS_SECRET_ACCESS_KEY/${AWS_SECRET_ACCESS_KEY}/g" main.tf'
         sh 'terraform init'
       }
     }
