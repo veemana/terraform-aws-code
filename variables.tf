@@ -4,7 +4,7 @@ variable "instance_name" {
 }
 
 variable "instance_type" {
-        default = "t2.micro"
+        default = "t3.micro"
 }
 
 variable "subnet_id" {
@@ -14,14 +14,13 @@ variable "subnet_id" {
 
 variable "ami_id" {
         description = "The AMI to use"
-        default = "ami-0577c11149d377ab7"
+        default = "ami-0a6351192ce04d50c"
 }
 
 variable "number_of_instances" {
         description = "number of instances to be created"
         default = 1
 }
-
 
 variable "ami_key_pair_name" {
         default = "aru1"
