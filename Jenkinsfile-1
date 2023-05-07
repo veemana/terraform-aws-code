@@ -21,7 +21,6 @@ pipeline {
 
     stage('Terraform Init') {
       steps {
-       sh 'terraform workspace select ${environment}'
        sh 'terraform init'
       }
     }
