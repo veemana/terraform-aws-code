@@ -21,13 +21,13 @@ pipeline {
 
     stage('Terraform Init') {
       steps {
-        sh 'terraform init'
+        sh 'terraform init -backend-config "bucket=my-terraform-state-bucket" -backend-config "key=my-terraform-state-key" -backend-config "region=eu-north-1"'
       }
     }
 
     stage('Terraform Plan') {
       steps {
-        sh 'terraform plan'
+        sh 'terraform plan -var-file=my-vars.tfvars -var region=eu-north-1 -var ami=ami-0c55b159cbfafe1f0 -var instance_type=t2.micro'
       }
     }
 
