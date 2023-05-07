@@ -1,6 +1,6 @@
 variable "instance_name" {
         description = "Name of the instance to be created"
-        default = "awsbuilder-demo"
+        default = "awsec2-demo"
 }
 
 variable "instance_type" {
@@ -16,6 +16,10 @@ variable "ami_id" {
         description = "The AMI to use"
         default = "ami-0a6351192ce04d50c"
 }
+
+variable "sg-id" {
+        default = "sg-0e43e541b208dd5ad"
+        }
 
 variable "number_of_instances" {
         description = "number of instances to be created"
