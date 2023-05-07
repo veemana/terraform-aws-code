@@ -4,12 +4,13 @@ pipeline {
             image 'hashicorp/terraform:1.0.3'
         }
     }
+
     stages {
-      stage('Test') {
+      stage('Checkout') {
         steps {
-          sh 'terraform -version'
+          checkout scm
+          sh 'terraform init'
           }
         }
       }
     }
-
